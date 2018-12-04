@@ -41,7 +41,7 @@ WORKDIR /tmp
 # RUN /root/anaconda3/bin/conda create --name powerai_154_tf1.10
 # RUN /root/anaconda3/bin/conda activate powerai_154_tf1.10
 RUN apt-get install -y wget vim-gtk
-RUN wget http://ftp.unicamp.br/pub/ppc64el/ai_frameworks/tensorflow/tensorflow-1.10.0-cp36-cp36m-linux_ppc64le.whl
-RUN pip install tensorflow-1.10.0-cp36-cp36m-linux_ppc64le.whl
+# RUN wget http://ftp.unicamp.br/pub/ppc64el/ai_frameworks/tensorflow/tensorflow-1.10.0-cp36-cp36m-linux_ppc64le.whl
+# RUN pip install tensorflow-1.10.0-cp36-cp36m-linux_ppc64le.whl
 
 ENTRYPOINT ["/bin/bash"]
