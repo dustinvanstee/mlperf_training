@@ -36,4 +36,11 @@ RUN pip3 install --upgrade setuptools
 RUN pip3 install -r minigo/requirements.txt
 #RUN pip3 install "tensorflow-gpu>=1.5,<1.6"
 
+RUN chown -R pwrai:pwrai /research/
+RUN chown -R pwrai:pwrai /logs/
+
+USER pwrai
+
+source /opt/DL/tensorflow/bin/tensorflow-activate
+
 ENTRYPOINT ["/bin/bash"]
