@@ -1,5 +1,6 @@
 FROM dustinvanstee:powerai-1.5.3-py3
-# temporary comment
+# PowerAI Container defaults to pwrai user.  Set root user
+USER root
 
 WORKDIR /research
 RUN apt-get update
