@@ -30,6 +30,7 @@ RUN conda install -c anaconda scikit-learn
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
 # RUN /bin/bash env_setup.sh
+RUN . /opt/DL/tensorflow/bin/tensorflow-activate
 
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
@@ -39,7 +40,6 @@ RUN pip3 install -r minigo/requirements.txt
 RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
-RUN source /opt/DL/tensorflow/bin/tensorflow-activate
 USER pwrai
 
 ENTRYPOINT ["/bin/bash"]
