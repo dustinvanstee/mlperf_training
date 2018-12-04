@@ -30,7 +30,6 @@ RUN conda install -c anaconda scikit-learn
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
 # RUN /bin/bash env_setup.sh
-RUN . /opt/DL/tensorflow/bin/tensorflow-activate
 
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
