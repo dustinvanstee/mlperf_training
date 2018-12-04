@@ -41,6 +41,6 @@ RUN chown -R pwrai:pwrai /logs/
 
 USER pwrai
 
-source /opt/DL/tensorflow/bin/tensorflow-activate
+RUN source /opt/DL/tensorflow/bin/tensorflow-activate
 
 ENTRYPOINT ["/bin/bash"]
