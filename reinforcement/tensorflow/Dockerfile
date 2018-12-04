@@ -23,7 +23,9 @@ RUN apt-get install -y python-pip python3-pip virtualenv htop
 #RUN pip3 install --upgrade numpy scipy sklearn tf-nightly-gpu
 # use PowerAI TF
 
-RUN conda install --upgrade numpy scipy sklearn 
+RUN conda install numpy scipy
+RUN conda install -c anaconda scikit-learn
+
 # Mount data into the docker
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
