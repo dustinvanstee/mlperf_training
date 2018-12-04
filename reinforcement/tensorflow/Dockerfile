@@ -39,8 +39,7 @@ RUN pip3 install -r minigo/requirements.txt
 RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
-USER pwrai
-
 RUN source /opt/DL/tensorflow/bin/tensorflow-activate
+USER pwrai
 
 ENTRYPOINT ["/bin/bash"]
