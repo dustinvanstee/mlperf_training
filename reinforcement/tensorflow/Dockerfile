@@ -31,21 +31,18 @@ RUN conda install -c anaconda scikit-learn
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 
-RUN chown -R pwrai:pwrai /research/
-RUN mkdir /logs && chown -R pwrai:pwrai /logs/
-# env.sh was built by running source /opt/DL/tensorflow/bin/tensorflow-activate and then capturing the env state
-#ADD env.sh /tmp/env.sh
-#RUN  /tmp/env.sh
 
 USER pwrai
 ENV PATH /home/pwrai/anaconda3/bin/:$PATH
 RUN /bin/bash -c "source /home/pwrai/.profile"
-#RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
+#"source /opt/DL/tensorflow/bin/tensorflow-activate" embedded in run_and_time.sh
 
 # Mount data into the docker
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
 RUN pip3 install -r minigo/requirements.txt
+RUN chown -R pwrai:pwrai /research/
+RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
 
 ENTRYPOINT ["/bin/bash"]
