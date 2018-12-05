@@ -26,9 +26,6 @@ RUN apt-get install -y python-pip python3-pip virtualenv htop
 RUN conda install numpy scipy
 RUN conda install -c anaconda scikit-learn
 
-# Mount data into the docker
-ADD . /research/reinforcement
-WORKDIR /research/reinforcement
 # RUN /bin/bash env_setup.sh
 
 RUN pip3 install --upgrade pip
@@ -40,8 +37,13 @@ RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
 USER pwrai
+ENV PATH /home/pwrai/anaconda3/bin/:$PATH
 RUN /bin/bash -c "source /home/pwrai/.profile"
 RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
+
+# Mount data into the docker
+ADD . /research/reinforcement
+WORKDIR /research/reinforcement
 
 
 ENTRYPOINT ["/bin/bash"]
