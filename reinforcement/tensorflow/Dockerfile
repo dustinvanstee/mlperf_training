@@ -40,6 +40,7 @@ RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
 USER pwrai
+RUN /bin/bash -c "source /home/pwrai/.profile"
 RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
 
 
