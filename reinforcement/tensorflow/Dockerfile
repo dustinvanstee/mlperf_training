@@ -33,6 +33,8 @@ RUN pip3 install --upgrade setuptools
 
 RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
+ADD env.sh /tmp/env.sh
+RUN  /tmp/env.sh
 
 USER pwrai
 ENV PATH /home/pwrai/anaconda3/bin/:$PATH
@@ -42,7 +44,6 @@ RUN /bin/bash -c "source /home/pwrai/.profile"
 # Mount data into the docker
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
-RUN env.sh
 RUN pip3 install -r minigo/requirements.txt
 
 
