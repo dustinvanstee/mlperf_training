@@ -37,11 +37,12 @@ RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 USER pwrai
 ENV PATH /home/pwrai/anaconda3/bin/:$PATH
 RUN /bin/bash -c "source /home/pwrai/.profile"
-RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
+#RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
 
 # Mount data into the docker
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
+RUN env.sh
 RUN pip3 install -r minigo/requirements.txt
 
 
