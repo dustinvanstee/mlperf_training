@@ -37,7 +37,9 @@ RUN pip3 install --upgrade setuptools
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
 RUN pip3 install -r minigo/requirements.txt
-RUN chown -R pwrai:pwrai /research/
+RUN chown -R pwrai:pwrai /research
+RUN chown -R pwrai:pwrai /research/reinforcement
+
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
 
 USER pwrai
