@@ -30,8 +30,6 @@ RUN conda install -c anaconda scikit-learn
 
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
-RUN pip3 install -r minigo/requirements.txt
-#RUN pip3 install "tensorflow-gpu>=1.5,<1.6"
 
 RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
@@ -44,6 +42,7 @@ RUN /bin/bash -c "source /opt/DL/tensorflow/bin/tensorflow-activate"
 # Mount data into the docker
 ADD . /research/reinforcement
 WORKDIR /research/reinforcement
+RUN pip3 install -r minigo/requirements.txt
 
 
 ENTRYPOINT ["/bin/bash"]
