@@ -33,8 +33,9 @@ RUN pip3 install --upgrade setuptools
 
 RUN chown -R pwrai:pwrai /research/
 RUN mkdir /logs && chown -R pwrai:pwrai /logs/
-ADD env.sh /tmp/env.sh
-RUN  /tmp/env.sh
+# env.sh was built by running source /opt/DL/tensorflow/bin/tensorflow-activate and then capturing the env state
+#ADD env.sh /tmp/env.sh
+#RUN  /tmp/env.sh
 
 USER pwrai
 ENV PATH /home/pwrai/anaconda3/bin/:$PATH

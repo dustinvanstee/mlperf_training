@@ -2,7 +2,7 @@
 # runs benchmark and reports time to convergence
 # to use the script:
 #   run_and_time.sh <random seed 1-5>
-
+source /opt/DL/tensorflow/bin/tensorflow-activate
 
 set -e
 
