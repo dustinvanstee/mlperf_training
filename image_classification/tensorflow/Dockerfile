@@ -49,4 +49,4 @@ ENV PATH /home/pwrai/anaconda3/bin/:$PATH
 RUN /bin/bash -c "source /home/pwrai/.profile"
 
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
