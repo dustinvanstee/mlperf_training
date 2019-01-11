@@ -3,6 +3,8 @@
 # to use the script: 
 #   run_and_time.sh <random seed 1-5>
 
+# Needed to setup tensorflow environment variable for PowerAI 
+source /opt/DL/tensorflow/bin/tensorflow-activate
 
 set -e
 

@@ -50,10 +50,3 @@ RUN /bin/bash -c "source /home/pwrai/.profile"
 
 
 ENTRYPOINT ["/bin/bash"]
-
-
-
-
-
-
-ENTRYPOINT ["/bin/bash"]
